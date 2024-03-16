@@ -13,6 +13,9 @@ const server = Bun.serve({
       case "/contact":
         return new Response("Contact us!");
 
+      case "/greet":
+        return new Response(Bun.file('./greet.txt'));
+
       default:
         throw new Error("Could not find " + url.pathname);
     }
